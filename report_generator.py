@@ -1,6 +1,6 @@
 import sys
-from consts import *
 from dict_data_item import DictDataItem
+from consts import RED_COLOR, BLUE_COLOR, RESET_COLOR
 
 
 class ReportGenerator():
@@ -90,11 +90,10 @@ class ReportGenerator():
         for day, (max_temp, min_temp) in enumerate(zip(
                 self.result.get_data('max_temps'), self.result.get_data('min_temps')), start=1):
 
-           # generate bar for max temp in red
             max_bar = RED_COLOR + '+' * \
                 int(max_temp) + RESET_COLOR + f" {int(max_temp)}C"
 
-    # generate bar for min temp in blue
+        # generate bar for min temp in blue
             min_bar = BLUE_COLOR + '+' * \
                 int(min_temp) + RESET_COLOR + f" {int(min_temp)}C"
             print(f"{day:02} {max_bar}")

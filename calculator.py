@@ -5,7 +5,7 @@ from weather_data_parser import WeatherReading
 
 
 class Calculator:
-    ''' Class to calculate extremes, averages for a given year or month 
+    ''' Class to calculate extremes, averages for a given year or month
     '''
 
     def __init__(self, weather_readings: WeatherReading):
