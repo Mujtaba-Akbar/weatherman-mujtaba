@@ -11,3 +11,5 @@ MIN_HUMIDITY_INDEX = 6
 RED_COLOR = '\033[91m'
 BLUE_COLOR = '\033[94m'
 RESET_COLOR = '\033[0m'
+
+DATA_DIR = 'weatherfiles/'

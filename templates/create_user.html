@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
+    <title>Create User</title>
+  </head>
+  <body class="bg-blue-50 text-gray-800">
+    <div class="flex items-center justify-center min-h-screen py-12">
+      <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg mx-auto">
+        <h1 class="text-3xl font-bold mb-4 text-blue-700 text-center">Create User</h1>
+        <form action="{{ url_for('create_user') }}" method="POST" class="space-y-4">
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm " />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm " />
+          </div>
+          <div class="mb-4">
+            <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+            <input type="number" id="age" name="age" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm " />
+          </div>
+          <button type="submit" class="w-full mb-14 px-4 py-2 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none ">Submit</button>
+        <a href="/show_users" class="mt-12 w-full mx-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow-sm ">Show Users</a>
+
+        </form>
+    </div>
+</div>
+  </body>
+</html>

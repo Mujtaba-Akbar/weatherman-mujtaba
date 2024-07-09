@@ -96,7 +96,7 @@ class Calculator:
         '''
 
         filtered_readings = self.filter_readings(
-            self.weather_readings, year=year, month=month)
+            self.weather_readings, year=int(year), month=int(month))
 
         if not filtered_readings:
             return "No data available for this year."
@@ -132,6 +132,8 @@ class Calculator:
                                               average_max_temp)
             self.calculation_results.add_data('avg_mean_humidity',
                                               average_mean_humidity)
+            self.calculation_results.add_data('year', year)
+            self.calculation_results.add_data('month', month)
         return self.calculation_results
 
     def populate_temp_extremes_for_month(self, year: str, month: str):

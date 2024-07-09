@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{{url_for('static',filename='css/output.css')}}"
+      rel="stylesheet"
+    />
+    <title>Weatherman</title>
+    <script>
+      function toggleMonthDropdown() {
+        const type = document.getElementById("type").value;
+        const monthDropdown = document.getElementById("month-container");
+
+        if (type === "extreme") {
+          monthDropdown.style.display = "none";
+        } else {
+          monthDropdown.style.display = "block";
+        }
+      }
+
+      function navigate() {
+        const type = document.getElementById("type").value;
+        const month = document.getElementById("month").value;
+        const year = document.getElementById("year").value;
+        console.log(type, month, year);
+        let url = "";
+        if (type === "extreme") {
+          url = `http://127.0.0.1:5000/yearly-extremes?year=${year}`;
+        } else if (type === "average") {
+          url = `http://127.0.0.1:5000/monthly-averages?year=${year}&month=${month}`;
+        } else if (type === "basic-chart") {
+          url = `http://127.0.0.1:5000/basic-chart?year=${year}&month=${month}`;
+        }
+
+        window.location.href = url;
+      }
+    </script>
+  </head>
+  <body class="bg-blue-50 text-gray-800">
+    <div
+      class="flex flex-col items-center justify-center min-h-screen py-12 mx-auto"
+    >
+      <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg mx-auto">
+        <h1 class="text-5xl font-bold mb-4 text-blue-700 text-center">
+          Weatherman
+        </h1>
+        <p class="text-lg mb-8 text-gray-600 text-center">
+          Get the latest weather updates!
+        </p>
+        <div class="mb-6">
+          <label for="type" class="block mb-2 text-sm font-medium text-gray-700"
+            >Select Type</label
+          >
+          <select
+            id="type"
+            name="type"
+            onchange="toggleMonthDropdown()"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="average">Monthly Average</option>
+            <option value="extreme">Year's Extreme</option>
+            <option value="basic-chart">Basic Chart</option>
+          </select>
+        </div>
+        <div id="month-container" class="mb-6">
+          <label
+            for="month"
+            class="block mb-2 text-sm font-medium text-gray-700"
+            >Select Month</label
+          >
+          <select
+            id="month"
+            name="month"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label for="year" class="block mb-2 text-sm font-medium text-gray-700"
+            >Select Year</label
+          >
+          <select
+            id="year"
+            name="year"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+          </select>
+        </div>
+        <button
+          onclick="navigate()"
+          class="w-full px-4 py-2 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        >
+          Get Weather Info
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
