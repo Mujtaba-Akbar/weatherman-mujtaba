@@ -130,8 +130,6 @@ class ReportGenerator():
             min_bar = BLUE_COLOR + '+' * \
                 int(min_temp) + RESET_COLOR + f" {int(min_temp)}C"
 
-            # print(f"{day:02} {max_bar}")
-            # print(f"{day:02} {min_bar}")
             response_string += f"{day:02} {max_bar}\n{day:02} {min_bar}\n"
 
         print("\n")

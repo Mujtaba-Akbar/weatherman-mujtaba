@@ -5,7 +5,11 @@ from calculator import Calculator
 from report_generator import ReportGenerator
 from weather_data_parser import WeatherDataParser
 from consts import DATA_DIR
+from config import DevelopmentConfig
+
 app = Flask(__name__)
+
+app.config.from_object(DevelopmentConfig)
 
 parser = WeatherDataParser(DATA_DIR)
 weather_data = parser.populate_data()
@@ -100,4 +104,4 @@ def show_users():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
