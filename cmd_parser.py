@@ -1,6 +1,6 @@
 import argparse
 from datetime import datetime
-from actions import *
+from actions import NetChartAction, MonthlyAveragesAction, YearlyExtremesAction
 
 
 def create_parser():

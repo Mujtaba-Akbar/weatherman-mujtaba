@@ -1,7 +1,14 @@
 import os
 from collections import namedtuple
-from consts import *
-
+from consts import (
+    DATE_INDEX,
+    MAX_TEMP_INDEX,
+    MEAN_TEMP_INDEX,
+    MIN_TEMP_INDEX,
+    MAX_HUMIDITY_INDEX,
+    MEAN_HUMIDITY_INDEX,
+    MIN_HUMIDITY_INDEX
+)
 
 # data structure to hold weather readings for a given day
 WeatherReading = namedtuple('WeatherReading', [

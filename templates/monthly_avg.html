@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
+    <title>Monthly Average</title>
+  </head>
+  <body class="bg-blue-50 text-gray-800">
+    <div class="flex flex-col items-center justify-center min-h-screen py-12">
+      <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg">
+        <h1 class="text-5xl font-bold mb-4 text-blue-700 text-center">Monthly Averages</h1>
+        <p class="text-lg  text-gray-600 text-center">Year: {{ report.year }}</p>
+        <p class="text-lg mb-8 text-gray-600 text-center">Month: {{ report.month }}</p>
+        <div class="space-y-4">
+          <div class="p-4 bg-blue-100 rounded-lg">
+            <h2 class="text-xl font-semibold text-blue-800">Average Lowest Temperature</h2>
+            <p class="text-gray-700">{{ report.avg_lowest_temp }} °C</p>
+          </div>
+          <div class="p-4 bg-blue-100 rounded-lg">
+            <h2 class="text-xl font-semibold text-blue-800">Average Highest Temperature</h2>
+            <p class="text-gray-700">{{ report.avg_highest_temp }} °C</p>
+          </div>
+          <div class="p-4 bg-blue-100 rounded-lg">
+            <h2 class="text-xl font-semibold text-blue-800">Average Mean Humidity</h2>
+            <p class="text-gray-700">{{ report.avg_mean_humidity }}%</p>
+          </div>
+        </div>
+        <button onclick="history.back()" class="mt-8 w-full px-4 py-2 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          Go Back
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

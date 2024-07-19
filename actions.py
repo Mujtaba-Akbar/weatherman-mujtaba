@@ -5,8 +5,7 @@ from report_generator import ReportGenerator
 
 
 class YearlyExtremesAction(argparse.Action):
-    ''' Generate yearly extremes report 
-
+    ''' Generate yearly extremes report
     Attributes:
         data_dir (str): The path to the data files
 
@@ -24,8 +23,7 @@ class YearlyExtremesAction(argparse.Action):
 
 
 class MonthlyAveragesAction(argparse.Action):
-    ''' Generate monthly averages report 
-
+    ''' Generate monthly averages report
     Attributes:
         data_dir (str): The path to the data files
         '''
@@ -52,7 +50,7 @@ class MonthlyAveragesAction(argparse.Action):
 
 
 class BasicChartAction(argparse.Action):
-    ''' Generate basic barchart for daywise temperatures 
+    ''' Generate basic barchart for daywise temperatures
 
     Attributes:
         data_dir (str): The path to the data files

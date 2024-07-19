@@ -1,6 +1,4 @@
 import sys
-from weather_data_parser import *
-from actions import *
 from cmd_parser import create_parser
 
 
